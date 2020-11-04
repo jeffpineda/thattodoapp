@@ -1,38 +1,265 @@
-.App {
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  background: #f5f6fb;
+}
+
+nav {
+  background: #fff;
+  min-height: 2em;
+  padding: 0.7em;
+  box-shadow: 0px 4px 8px 0px rgba(9, 32, 68, 0.05);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.main-section {
+  padding: 5em 0 2em;
+}
+
+.container {
+  max-width: 620px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.progress-bar {
+  max-width: 24.4em;
+  height: 0.55em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #c6cadf;
+  overflow:hidden;
+  border-radius: 100px;
+  position: relative;
+}
+
+.progress-bar__fill {
+  position: absolute;
+  height: 100%;
+  top: 0; left: 0;
+  background: #3b57ff;
+  transition: width 1s, background 0.5s;
+  border-radius: 100px;
+}
+
+.progress-bar.finished .progress-bar__fill {
+  background: #2aaffc;
+}
+
+.progress-bar__text {
+  display: block;
+  text-align: center;
+  padding-top: 0.6em;
+  padding-bottom: 1.67em;
+}
+
+
+.tasklist {
+
+}
+
+.tasklist__item {
+  padding: 1em 1.5em;
+  margin-bottom: 0.8em;
+  box-shadow: 0px 4px 8px 0px rgba(9, 32, 68, 0.05);
+  background: #fff;
+  border-radius: 15px;
+  height: 4.45em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tasklist__item:hover button.delete-task {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tasklist__item span {
+  display: inline-block;
+  font-size: 1.25em;
+}
+
+.tasklist__item.completed span {
+  color: #c8d0ea;
+  text-decoration: line-through;
+}
+
+.tasklist__item.completed button.checkbox {
+  background: #6075f5;
+}
+
+.tasklist__item.completed button.checkbox .fa-check {
+  opacity: 1;
+}
+
+.tasklist__item-left {
+  display: flex;
+  align-items: center;
+}
+
+button.checkbox {
+  border: 0;
+  background: #dddfeb;
+  width: 1.8333em;
+  height: 1.8333em;
+  margin-right: 1.2em;
+  border-radius: 5px;
+  transition: background 0.2s;
+  color: #b4bfff;;
+}
+
+button.checkbox .fa-check {
+  opacity: 0;
+}
+
+button.checkbox:hover {
+  background: #c0c5de;
+  cursor: pointer;
+}
+
+button.checkbox:focus {
+  outline: 0;
+}
+
+
+.main-msg-text {
+  display: block;
+  text-align: center;
+  font-size: 1.94em;
+  margin-bottom: 1.3em;
+}
+
+.date-text {
+  display: block;
+  text-align: center;
+  font-size: 1.16em;
+  margin-bottom: 1.2em;
+  color: #8595c6;
+}
+
+button.delete-task {
+  color: #b4b4b4;
+  border: 2px solid #b4b4b4;
+  border-radius: 100%;
+  width: 31px; height: 31px;
+  background: none;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateX(10px);
+}
+
+button.delete-task:focus {
+  outline: 0;
+}
+
+button.delete-task:hover {
+  cursor: pointer;
+}
+
+button.btn-blue, button.btn-teal {
+  color: #fff;
+  background: #3b57ff;
+  border: 0;
+  padding: 0.8em 1.6em;
+  border-radius: 300em;
+  font-size: 1em;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button.btn-teal {
+  background: #2aaffc;
+}
+
+button.btn-blue:hover, button.btn-blue:focus {
+  background: #5c73ff;
+  cursor: pointer;
+  outline: 0;
+  transform: scale(1.06);
+}
+
+button.btn-teal:hover, button.btn-teal:focus {
+  background: #46bbff;
+  cursor: pointer;
+  outline: 0;
+  transform: scale(1.06);
+}
+
+button.btn-small {
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+}
+
+.btn-addtask {
+  min-width: 6em;
+  font-size: 1em;
+}
+
+input.addtask-input {
+  border: 0;
+  background: #fff;
+  border: 100em;
+  display: block;
+  margin-right: 1em;
+  border-radius: 100em;
+  width: 100%;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  box-shadow: inset 3px 3px 8px 3px rgba(0,0,0,0.04);
+  border: 2px solid #e1e4f1;
+}
+
+input.addtask-input:focus {
+  outline: 0;
+}
+
+.addtask-form {
+  display: flex;
+  width: 100%;
+}
+
+.addtask-section {
+  padding-bottom: 2em;
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hide {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hidden {
+  visibility: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.toggle-section {
+  text-align: center;
+  padding-bottom: 0.7em;
 }
 
-.App-link {
-  color: #61dafb;
+.btnToggleCompletedTasks {
+  background-color: transparent;
+  border: 0;
+  color: #6f7893;
+  font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btnToggleCompletedTasks:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btnToggleCompletedTasks:focus {
+  outline: 0;
 }
