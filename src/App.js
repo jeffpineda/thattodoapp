@@ -8,6 +8,15 @@ import ProgressBar from './components/ProgressBar';
 import Message from './components/Message';
 import Today from './components/Today';
 
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+
+/**
+ * @todo
+ * - Add 'Edit' option for each Todo item
+ * - Adjust maximum character amount
+ */
+
 function App() {
 
   const completionMessages = [
@@ -99,7 +108,7 @@ function App() {
             <button
               className="btnToggleCompletedTasks"
               onClick={showHideClickHandler}>
-              {showCompleted === true ? 'Hide' : 'Show'} Completed
+              <FontAwesomeIcon icon={showCompleted === true ? faEyeSlash : faEye} /> {showCompleted === true ? 'Hide' : 'Show'} Completed
             </button>
           </div>
   }

@@ -21,7 +21,7 @@ nav {
 }
 
 .main-section {
-  padding: 5em 0 2em;
+  padding: 3.5em 0 2em;
 }
 
 .container {
@@ -63,12 +63,11 @@ nav {
 }
 
 .tasklist__item {
-  padding: 1em 1.5em;
+  padding: 1em;
   margin-bottom: 0.8em;
   box-shadow: 0px 4px 8px 0px rgba(9, 32, 68, 0.05);
   background: #fff;
   border-radius: 15px;
-  height: 4.45em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,7 +80,7 @@ nav {
 
 .tasklist__item span {
   display: inline-block;
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 
 .tasklist__item.completed span {
@@ -146,7 +145,7 @@ button.delete-task {
   color: #b4b4b4;
   border: 2px solid #b4b4b4;
   border-radius: 100%;
-  width: 31px; height: 31px;
+  width: 28px; height: 28px;
   background: none;
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s;
@@ -252,7 +251,7 @@ input.addtask-input:focus {
 
 .btnToggleCompletedTasks:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: #565f7c;
 }
 
 .btnToggleCompletedTasks:focus {
