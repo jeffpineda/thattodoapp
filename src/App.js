@@ -97,9 +97,6 @@ function App() {
     }
   }
 
-  // let array = [true, true, false]
-  // console.log(array.filter(el => el === false).length);
-
   let showHideElement;
 
   if ( todos.length ) {
