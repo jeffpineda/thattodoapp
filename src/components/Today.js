@@ -5,7 +5,7 @@ const Today = () => {
 
     const getToday = () => {
         const today = new Date();
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     
         return months[today.getMonth()] + ' ' + today.getDate();
     }
